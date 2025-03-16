@@ -5,10 +5,15 @@ using namespace std;
 
 void Max_Heapify(vector<int> arr,int root){
 
-    /*  Parameters :  array of the heap, the index of the root
+    /* 
+     * @brief restore the heap property when a node vioaltes it.
+     * @param array refernce to the array which contains the heap
+     * @param root reference to the parent index of the sub tree
+     * @return void modified array which satisfy the heap property
+     * 
+     * @complexity O(log n) - can derive by the second case of the master theorem
 
-        This function maintain the heap property which is for any node, its parent node must be 
-        bigger than the node. If a node violate this condition this function reinstate it.
+
     */
 
     int left = root * 2;        // taking the index of the left node
@@ -29,8 +34,5 @@ void Max_Heapify(vector<int> arr,int root){
         swap(arr[max], arr[root]);
     }
     Max_Heapify(arr,max);
-
-
-
 
 }
